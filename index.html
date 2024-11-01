@@ -1,16 +1,14 @@
 <!doctypehtml><html lang=en><meta charset=UTF-8><meta content="width=device-width,initial-scale=1"name=viewport><title>Portfolio Website</title><link href=style.css rel=stylesheet><link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&display=swap"rel=stylesheet><link href=https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css rel=stylesheet><header><div class=container><h1>Aryan Dadwal</h1><nav><ul><li><a href=#about>About</a><li><a href=#portfolio>Portfolio</a><li><a href=#services>Skills</a><li><a href=#contact>Contact</a></ul></nav></div></header><section id=about><div class=video-background><video autoplay id=myVideo loop muted><source src=video.mp4 type=video/mp4>Your browser does not support HTML5 video.</video><div class=content><img alt="Aryan Dadwal"class=about-image src=aryandadwal.jpg><h2>About Me</h2><p>I'm Aryan Dadwal, a first-year engineering student at NIT Jalandhar with a passion for AI, web development, competitive programming and tech innovation. I’ve led and contributed to impactful projects, such as SmartLanes, an AI-based traffic management solution selected in the Smart India Hackathon. My team secured third position in a National Level Hackathon organised by Prajna AI. Skilled in HTML, CSS, JavaScript, Python, C, C++, and SQL, I’m driven to combine these skills with my love for AI and generative technologies to create solutions that make a difference. Beyond academics, I’m also a writer, footballer, swimmer, public-speaker, and lifelong learner, always exploring new ways to expand my knowledge and impact.</div></div></section><section id=portfolio><div class=video-background><video autoplay id=portfolioVideo loop muted><source src=video2.mp4 type=video/mp4>Your browser does not support HTML5 video.</video><div class=portfolio-content><h2>My Work</h2><div class=portfolio-items><div class=portfolio-item><a href=project1.html><img alt="Project 1"class=portfolio-image src=project1img1.jpeg><h3>3rd Position in PrajnaAI National Hackathon</h3></a></div><div class=portfolio-item><a href=project2.html><img alt="Project 2"class=portfolio-image src=project2img1.jpg><h3>Shortlisted in SIH Hackathon</h3></a></div></div></div></div></section><section id=services><div class=video-background><video autoplay id=servicesVideo loop muted><source src=video3.mp4 type=video/mp4>Your browser does not support HTML5 video.</video><div class=container><h2>Skills</h2><br><ul><li>Python<li>JavaScript<li>HTML<li>CSS<li>SQL<li>MySQL<li>C<li>C++</ul></div></div></section><section id=contact><div class=video-background><video autoplay id=contactVideo loop muted><source src=video4.mp4 type=video/mp4>Your browser does not support HTML5 video.</video><div class=container><h2>Contact Me</h2><form id=contact-form><label>Name</label> <input name=user_name required> <label>Email</label> <input name=user_email required type=email> <label>Message</label> <textarea name=message required></textarea> <input type=submit value=Send></form><div class=social-media-links><h3>My Links:</h3><a href=https://www.instagram.com/aryandadwal2006 class=social-button target=_blank><i class="fab fa-instagram"></i> Instagram </a><a href=https://www.linkedin.com/in/aryandadwal class=social-button target=_blank><i class="fab fa-linkedin"></i> LinkedIn </a><a href=https://www.facebook.com/aryan.dadwal.75033 class=social-button target=_blank><i class="fab fa-facebook-f"></i> Facebook </a><a href=https://wa.me/7986717632 class=social-button target=_blank><i class="fab fa-whatsapp"></i> WhatsApp </a><a href=https://t.me/aryandadwal class=social-button target=_blank><i class="fab fa-telegram"></i> Telegram </a><a href=https://leetcode.com/aryandadwal2006/ class=social-button target=_blank><i class="fab fa-code"></i> LeetCode </a><a href=https://github.com/aryandadwal2006 class=social-button target=_blank><i class="fab fa-github"></i> GitHub</a></div></div></div></section><footer><div class=container><p>© 2024 Aryan Dadwal. All rights reserved.</div></footer><script src=https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js></script><script>(function() {
-            emailjs.init("kJSn5KFaWNvSEnS2Z"); // Replace with your public key
+            emailjs.init("kJSn5KFaWNvSEnS2Z");
         })();
 
         window.onload = function() {
             document.getElementById('contact-form').addEventListener('submit', function(event) {
-                event.preventDefault(); // Prevent default form submission
-
-                // Send the form data using EmailJS
+                event.preventDefault();
                 emailjs.sendForm('aryandadwal', 'aryandadwal', this)
                     .then(() => {
                         alert('SUCCESS! Your message has been sent.');
-                        this.reset(); // Optionally reset the form
+                        this.reset();
                     }, (error) => {
                         alert('FAILED... ' + JSON.stringify(error));
                     });
@@ -20,10 +18,8 @@
     const pauseButton = document.getElementById('pause-button');
     const nextButton = document.getElementById('next-button');
     const restartButton = document.getElementById('restart-button');
-
-    // Array of songs
     const songs = [
-        'song1.mp3', // Replace with your actual file paths
+        'song1.mp3',
         'song2.mp3',
         'song3.mp3',
         'song4.mp3',
@@ -54,59 +50,42 @@
         'song29.mp3',
         'song30.mp3'
     ];
-    
-     // Shuffle function to randomize the songs array
     function shuffleArray(array) {
         for (let i = array.length - 1; i > 0; i--) {
             const j = Math.floor(Math.random() * (i + 1));
-            [array[i], array[j]] = [array[j], array[i]]; // Swap elements
+            [array[i], array[j]] = [array[j], array[i]];
         }
     }
-
-    // Shuffle the songs array
     shuffleArray(songs);
-
     let currentSongIndex = 0;
-
-    // Load the first song
     audioPlayer.src = songs[currentSongIndex];
-
-    // Play button event
     playButton.onclick = () => {
         audioPlayer.play();
     };
-
-    // Pause button event
     pauseButton.onclick = () => {
         audioPlayer.pause();
     };
-
-    // Next button event
     nextButton.onclick = () => {
         currentSongIndex++;
         
         if (currentSongIndex >= songs.length) {
-            currentSongIndex = 0; // Loop back to the first song if at the end
-            shuffleArray(songs); // Shuffle again when starting over
+            currentSongIndex = 0;
+            shuffleArray(songs);
         }
         
         audioPlayer.src = songs[currentSongIndex];
         audioPlayer.play();
     };
-
-    // Restart button event
     restartButton.onclick = () => {
-        audioPlayer.currentTime = 0; // Start over from the beginning
+        audioPlayer.currentTime = 0;
         audioPlayer.play();
     };
-
-    // Event listener for when a song ends
     audioPlayer.onended = () => {
         currentSongIndex++;
         
         if (currentSongIndex >= songs.length) {
-            currentSongIndex = 0; // Loop back to the first song if at the end
-            shuffleArray(songs); // Shuffle again when starting over
+            currentSongIndex = 0;
+            shuffleArray(songs);
         }
         
         audioPlayer.src = songs[currentSongIndex];
