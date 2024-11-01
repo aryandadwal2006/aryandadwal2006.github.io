@@ -143,25 +143,6 @@ h2 {
     height: 100vh; /* Full height of viewport */
     overflow: hidden; /* Hide overflow */
 }
-/* unvisited link */
-a:link {
-  color: white;
-}
-
-/* visited link */
-a:visited {
-  color: white;
-}
-
-/* mouse over link */
-a:hover {
-  color: white;
-}
-
-/* selected link */
-a:active {
-  color: white;
-}
 
 #portfolioVideo {
     position: absolute;
