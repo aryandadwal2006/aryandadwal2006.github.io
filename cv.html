@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>CV — Aryan Dadwal</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;600;700&family=Newsreader:opsz,wght@6..72,500;6..72,600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="cv-page">
+  <div class="cv-top">
+    <a href="index.html">← Back to portfolio</a>
+    <button type="button" onclick="window.print()">Print / Save as PDF</button>
+  </div>
+  <main class="cv-sheet">
+    <h1>Aryan Dadwal</h1>
+    <p class="cv-contact">
+      <a href="mailto:aryandadwal2006@gmail.com">aryandadwal2006@gmail.com</a> ·
+      <a href="https://www.linkedin.com/in/aryandadwal">LinkedIn</a> ·
+      <a href="https://github.com/aryandadwal2006">GitHub</a>
+    </p>
+
+    <section class="cv-section">
+      <h2>Education</h2>
+      <div class="cv-entry">
+        <div class="cv-entry-head"><span>Indian Institute of Technology, Jodhpur</span><span>Expected 2028</span></div>
+        <div class="cv-entry-sub">Bachelor’s in Applied Artificial Intelligence and Data Science · GPA: 8.0 / 10.0</div>
+      </div>
+    </section>
+
+    <section class="cv-section">
+      <h2>Research & Publications</h2>
+      <div class="cv-entry">
+        <div class="cv-entry-head"><span>The Illusion of State: Sharp Memory-Decay Bounds in Linear State Space Models</span><span>ICML Workshop 2026</span></div>
+        <ul>
+          <li>Derived asymptotically tight bounds showing that memory in linear state-space models with defective transition matrices decays as Θ(k<sup>m−1</sup>ρ<sup>k</sup>).</li>
+          <li>Analyzed how defective system structure affects associative recall and formal-language counting, connecting memory retention to transition-operator dynamics.</li>
+        </ul>
+        <p><a href="https://openreview.net/forum?id=8Kg8lL3L58">OpenReview</a></p>
+      </div>
+      <div class="cv-entry">
+        <div class="cv-entry-head"><span>Provably Stable Neural Dynamics via Koopman Operator Certificates</span><span>ICML Workshop 2026</span></div>
+        <ul>
+          <li>Developed a Koopman-based parameterization guaranteeing Schur-stable latent linear dynamics using K = exp(Δt(−S + A)), with S positive definite and A skew-symmetric.</li>
+          <li>Recorded 0% stability violations in long-horizon forecasting across four dynamical-systems benchmarks.</li>
+        </ul>
+        <p><a href="https://openreview.net/forum?id=mDhyb0VGJu">OpenReview</a></p>
+      </div>
+      <div class="cv-entry">
+        <div class="cv-entry-head"><span>World Models in Action</span><span>Under Contract</span></div>
+        <div class="cv-entry-sub">Manning Publications · Sole Author · June 2026 – Present</div>
+        <p>Authoring a code-first technical book on world models, predictive architectures, latent dynamics and practical system design.</p>
+      </div>
+    </section>
+
+    <section class="cv-section">
+      <h2>Experience</h2>
+      <div class="cv-entry">
+        <div class="cv-entry-head"><span>OS Development Engineer · Xeneva</span><span>Jan 2026 – Sep 2026</span></div>
+        <ul>
+          <li>Built the RISC-V port of the operating system, implementing the microkernel, memory-management subsystems and hardware-abstraction layers; served as lead maintainer for the architecture repository.</li>
+          <li>Worked across low-level bring-up, boot flow and architecture-specific runtime paths to stabilize the port across hardware targets.</li>
+        </ul>
+      </div>
+      <div class="cv-entry">
+        <div class="cv-entry-head"><span>Quantitative Developer · Orion Quant</span><span>Feb 2026 – Mar 2026</span></div>
+        <ul>
+          <li>Prototyped low-latency C++ components for quantitative trading infrastructure, focusing on market-data handling and execution workflows.</li>
+          <li>Built execution and monitoring components around shared-memory data paths and C++ networking primitives for high-throughput, latency-sensitive systems.</li>
+        </ul>
+      </div>
+      <div class="cv-entry">
+        <div class="cv-entry-head"><span>Contributor · Google DeepMind Open Source</span><span>Oct 2025 – Dec 2025</span></div>
+        <ul>
+          <li>Contributed to the Lean conjecture repository, working on formalized mathematical conjectures and theorem-proving workflows.</li>
+          <li>Analyzed conjecture statements and refined formal representations using Lean’s type system.</li>
+        </ul>
+      </div>
+      <div class="cv-entry">
+        <div class="cv-entry-head"><span>AI Engineer Intern · SpaceMarvel AI</span><span>Jul 2025 – Sep 2025</span></div>
+        <ul>
+          <li>Developed low-latency C++ data-processing pipelines for streaming market data across ingestion, feature computation and downstream analysis.</li>
+          <li>Built a real-time feature extraction service with Python bindings and performance instrumentation, reducing processing latency by 42%.</li>
+          <li>Implemented algorithms for order-book imbalance, microprice dynamics and short-horizon volatility.</li>
+        </ul>
+      </div>
+      <div class="cv-entry">
+        <div class="cv-entry-head"><span>Software Engineering Intern · Bluestock Fintech</span><span>Dec 2024 – Jan 2025</span></div>
+        <ul>
+          <li>Built a Python/FastAPI REST microservice for dynamic pricing, handling 10M+ daily requests with PostgreSQL-backed data workflows.</li>
+          <li>Engineered a Kafka/PostgreSQL data-ingestion pipeline for 500 GB+ per day of financial tick data.</li>
+          <li>Developed statistical anomaly-detection logic for a production risk dashboard.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="cv-section">
+      <h2>Selected Projects</h2>
+      <div class="cv-entry">
+        <div class="cv-entry-head"><span>FlashAttention and Flash-Decoding Kernels in Triton</span></div>
+        <p>Implemented FlashAttention from a naive block-wise kernel to a hardware-aware design with epilogue normalization and FP8 tensor-core paths. Built Split-K Flash-Decoding.</p>
+      </div>
+      <div class="cv-entry">
+        <div class="cv-entry-head"><span>Hand-Optimized GPU Kernels at PTX/SASS Level</span></div>
+        <p>Built kernels for GEMM, FlashAttention, convolution, 2:4 structured sparsity and INT8 operations on Ampere GPUs. Developed cuasmR, an R-based cubin patcher for native SASS instructions.</p>
+      </div>
+      <div class="cv-entry">
+        <div class="cv-entry-head"><span>Distributed GRPO Training Infrastructure</span></div>
+        <p>Engineered a distributed framework decoupling vLLM rollout generation from JAX training, with an asynchronous shared-memory ring buffer for sequence transfer.</p>
+      </div>
+      <div class="cv-entry">
+        <div class="cv-entry-head"><span>Megatron-Style 3D Parallel Training Framework</span></div>
+        <p>Built tensor, pipeline and ZeRO-3 data parallelism, with NCCL communication wrappers and overlapped communication and computation.</p>
+      </div>
+      <div class="cv-entry">
+        <div class="cv-entry-head"><span>JAX Mixture-of-Experts Transformer and Kernel Optimization</span></div>
+        <p>Implemented a Transformer for multi-digit addition and a custom Pallas kernel fusing up- and down-projections; used Chinchilla-style scaling analysis to compare dense and MoE training.</p>
+      </div>
+      <div class="cv-entry">
+        <div class="cv-entry-head"><span>Speculative Decoding Inference Engine</span></div>
+        <p>Developed tree-structured speculative decoding with target-side parallel verification, a fused Triton verification kernel and dynamic KV-cache management components.</p>
+      </div>
+    </section>
+
+    <section class="cv-section">
+      <h2>Achievements</h2>
+      <ul>
+        <li>Codeforces Candidate Master.</li>
+        <li>India Top 10 and Global Top 120 in ICPC Winter Fest 2025–26.</li>
+        <li>Top 50 globally in Jane Street ICPC de Tryst.</li>
+        <li>World Finalist, Top 10 in the Flow Traders Market Making Challenge.</li>
+        <li>Top 50 in IMC Prosperity.</li>
+        <li>Sole author of two papers presented at ICML Workshops 2026.</li>
+      </ul>
+    </section>
+
+    <section class="cv-section cv-skills">
+      <h2>Technical Skills</h2>
+      <p><strong>Programming:</strong> Python, C++, Go, SQL, Bash, Lean 4</p>
+      <p><strong>Machine Learning:</strong> PyTorch, JAX, Flax, Optax, vLLM, Ray, Transformers, Mixture-of-Experts, state-space models, GRPO, speculative decoding</p>
+      <p><strong>Research:</strong> Linear dynamical systems, Koopman operator methods, stability analysis, mathematical modeling, formal theorem proving</p>
+      <p><strong>Accelerated & Distributed Computing:</strong> CUDA, Triton, Pallas, NCCL, MPI, tensor/pipeline/data parallelism</p>
+      <p><strong>Systems:</strong> Linux, RISC-V, operating systems, distributed systems, networking, memory management, FastAPI, Kafka, PostgreSQL, Docker, Kubernetes, CMake, GoogleTest</p>
+    </section>
+  </main>
+</body>
+</html>
