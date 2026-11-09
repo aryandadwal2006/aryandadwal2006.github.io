@@ -7,7 +7,6 @@
   <meta name="description" content="Aryan Dadwal — research in machine learning and engineering across GPU kernels, model dynamics, inference, and distributed systems.">
   <meta property="og:title" content="Aryan Dadwal">
   <meta property="og:description" content="Research, systems, and things built from first principles.">
-  <meta property="og:image" content="aryandadwal.jpg">
   <title>Aryan Dadwal — Research & Engineering</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -49,12 +48,16 @@
           <a href="https://codeforces.com/profile/aryandadwal2006" target="_blank" rel="noreferrer">Codeforces</a>
         </div>
       </div>
-      <div class="hero-portrait-wrap">
-        <div class="portrait-frame">
-          <img class="hero-portrait" src="aryandadwal.jpg" alt="Aryan Dadwal" onerror="this.style.display='none';this.nextElementSibling.style.display='grid';">
-          <div class="portrait-fallback" aria-hidden="true">AD</div>
+      <div class="hero-aside">
+        <div class="focus-card">
+          <p class="focus-card-label">Current research</p>
+          <p class="focus-card-title">Learning representations that preserve what matters.</p>
+          <div class="focus-rule"></div>
+          <p class="focus-card-label">Current engineering</p>
+          <p class="focus-card-title">Making training and inference faster, from kernels to distributed systems.</p>
+          <div class="focus-rule"></div>
+          <p class="focus-card-foot">IIT Jodhpur · Applied Artificial Intelligence and Data Science</p>
         </div>
-        <p class="portrait-caption">Undergraduate · IIT Jodhpur</p>
       </div>
     </section>
 
@@ -104,54 +107,50 @@
 
       <div class="project-grid">
         <article class="project-card">
-          <div class="project-topline"><span>GPU systems</span><span class="project-index">01</span></div>
-          <h3>Hand-Optimized GPU Kernels</h3>
-          <p>Built kernels for GEMM, FlashAttention, convolution, 2:4 sparsity and INT8 on Ampere. Includes a cubin patcher for inspecting and editing native SASS below PTX.</p>
-          <p class="project-result">2:4 sparse HGEMM · 41,721 dense-equivalent GFLOPS reported</p>
-          <div class="tag-list"><span>CUDA</span><span>PTX / SASS</span><span>C++</span><span>R</span></div>
-          <a class="card-link" href="https://github.com/aryandadwal2006/bare-metal" target="_blank" rel="noreferrer">Source code <span aria-hidden="true">↗</span></a>
-        </article>
-
-        <article class="project-card">
-          <div class="project-topline"><span>Attention kernels</span><span class="project-index">02</span></div>
-          <h3>FlashAttention in Triton</h3>
-          <p>Implemented prefill kernels from block-wise online softmax to deferred epilogue normalization and FP8 paths, alongside Split-K Flash-Decoding.</p>
-          <div class="tag-list"><span>Python</span><span>Triton</span><span>PyTorch</span><span>CUDA</span></div>
+          <div class="project-topline"><span>GPU kernels</span><span class="project-index">01</span></div>
+          <h3>FlashAttention and Flash-Decoding Kernels in Triton</h3>
+          <p>Implemented FlashAttention from a naive block-wise kernel to a hardware-aware design with epilogue normalization and FP8 tensor-core paths. Built Flash-Decoding using Split-K parallelization and two-stage log-sum-exp reduction.</p>
+          <div class="tag-list"><span>Python</span><span>Triton</span><span>CUDA</span><span>PyTorch</span></div>
           <a class="card-link" href="https://github.com/aryandadwal2006/Triton-FlashAttention" target="_blank" rel="noreferrer">Source code <span aria-hidden="true">↗</span></a>
         </article>
 
         <article class="project-card">
+          <div class="project-topline"><span>GPU architecture</span><span class="project-index">02</span></div>
+          <h3>Hand-Optimized GPU Kernels at PTX/SASS Level</h3>
+          <p>Built kernels for GEMM, FlashAttention, convolution, 2:4 structured sparsity and INT8 operations on Ampere GPUs. Developed cuasmR, an R-based cubin patcher for disassembling, editing and reassembling native SASS instructions.</p>
+          <p class="project-result">41,721 dense-equivalent GFLOPS on 2:4 sparse HGEMM</p>
+          <div class="tag-list"><span>CUDA</span><span>PTX / SASS</span><span>R</span><span>Nsight Compute</span></div>
+          <a class="card-link" href="https://github.com/aryandadwal2006/bare-metal" target="_blank" rel="noreferrer">Source code <span aria-hidden="true">↗</span></a>
+        </article>
+
+        <article class="project-card">
           <div class="project-topline"><span>Distributed training</span><span class="project-index">03</span></div>
-          <h3>Distributed GRPO Infrastructure</h3>
-          <p>Separated vLLM rollout generation from JAX policy updates, using Ray workers, shared-memory sequence transfer, group-relative reward normalization and NCCL synchronization.</p>
-          <div class="tag-list"><span>JAX</span><span>vLLM</span><span>Ray</span><span>NCCL</span><span>Kubernetes</span></div>
+          <h3>Distributed GRPO Training Infrastructure</h3>
+          <p>Engineered a distributed GRPO framework that decouples vLLM rollout generation from JAX training steps. Implemented an asynchronous, zero-copy shared-memory ring buffer for sequence transfer and optimized memory use for long-context, multi-node training.</p>
+          <div class="tag-list"><span>Python</span><span>Ray</span><span>JAX</span><span>vLLM</span><span>NCCL</span></div>
           <a class="card-link" href="https://github.com/aryandadwal2006/DisGRPO" target="_blank" rel="noreferrer">Source code <span aria-hidden="true">↗</span></a>
         </article>
 
         <article class="project-card">
-          <div class="project-topline"><span>Model inference</span><span class="project-index">04</span></div>
-          <h3>Speculative Decoding Engine</h3>
-          <p>Built greedy tree speculation with batched target-model verification and an ancestor attention mask. The repository also contains dynamic KV-cache utilities, a continuous-batch scheduler and an optional Triton prefix kernel.</p>
-          <div class="tag-list"><span>PyTorch</span><span>Triton</span><span>C++</span><span>CUDA</span></div>
+          <div class="project-topline"><span>Distributed systems</span><span class="project-index">04</span></div>
+          <h3>Megatron-Style 3D Parallel Training Framework</h3>
+          <p>Built a custom 3D-parallel training framework implementing tensor, pipeline and ZeRO-3 data parallelism. Added low-level NCCL communication wrappers for asynchronous reduce-scatter and overlapped communication with computation.</p>
+          <div class="tag-list"><span>PyTorch</span><span>NCCL</span><span>CUDA C++</span><span>MPI</span><span>Slurm</span></div>
+        </article>
+
+        <article class="project-card">
+          <div class="project-topline"><span>Model architecture</span><span class="project-index">05</span></div>
+          <h3>JAX Mixture-of-Experts Transformer and Kernel Optimization</h3>
+          <p>Implemented a Transformer from scratch for multi-digit addition. Used Chinchilla-style scaling analysis to compare dense and MoE architectures, and wrote a custom Pallas kernel fusing up- and down-projections.</p>
+          <div class="tag-list"><span>Python</span><span>JAX</span><span>Flax</span><span>Optax</span><span>Pallas</span></div>
+        </article>
+
+        <article class="project-card">
+          <div class="project-topline"><span>Inference</span><span class="project-index">06</span></div>
+          <h3>Speculative Decoding Inference Engine</h3>
+          <p>Developed an end-to-end speculative decoding engine with tree-structured attention to verify multiple token paths in parallel. Implemented a fused Triton verification kernel, dynamic KV-cache management and a continuous-batching scheduler.</p>
+          <div class="tag-list"><span>Triton</span><span>Python</span><span>C++</span><span>PyTorch</span><span>CUDA</span></div>
           <a class="card-link" href="https://github.com/aryandadwal2006/speculative-decoding" target="_blank" rel="noreferrer">Source code <span aria-hidden="true">↗</span></a>
-        </article>
-
-        <article class="project-card">
-          <div class="project-topline"><span>Market infrastructure</span><span class="project-index">05</span></div>
-          <h3>Cross-Venue Arbitrage Feed</h3>
-          <p>A C++17 feed that consumes L2 order-book streams from OKX, Bybit and Deribit, maintains synchronized in-memory books, and broadcasts fee-adjusted opportunities over WebSockets.</p>
-          <p class="project-result">Sub-10 ms opportunity-detection target</p>
-          <div class="tag-list"><span>C++17</span><span>WebSockets</span><span>Lock-free queues</span><span>CMake</span></div>
-          <a class="card-link" href="https://github.com/aryandadwal2006/cross-venue-arbitrage-feed" target="_blank" rel="noreferrer">Source code <span aria-hidden="true">↗</span></a>
-        </article>
-
-        <article class="project-card">
-          <div class="project-topline"><span>Matching engines</span><span class="project-index">06</span></div>
-          <h3>C++ Limit Order Book</h3>
-          <p>Implemented a FIFO, price-priority matching engine supporting market, limit, stop and stop-limit orders, with order-generation tooling and GoogleTest coverage.</p>
-          <p class="project-result">README-reported throughput: over 1.4M transactions / second</p>
-          <div class="tag-list"><span>C++</span><span>GoogleTest</span><span>Performance</span><span>Market microstructure</span></div>
-          <a class="card-link" href="https://github.com/aryandadwal2006/Limit-Order-Book" target="_blank" rel="noreferrer">Source code <span aria-hidden="true">↗</span></a>
         </article>
       </div>
       <div class="more-projects"><a class="text-link" href="https://github.com/aryandadwal2006?tab=repositories" target="_blank" rel="noreferrer">Browse all public repositories <span aria-hidden="true">↗</span></a></div>
