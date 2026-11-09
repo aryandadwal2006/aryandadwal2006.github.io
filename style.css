@@ -186,3 +186,14 @@ button { font: inherit; }
   html { scroll-behavior: auto; }
   *, *::before, *::after { transition-duration: .01ms !important; animation-duration: .01ms !important; animation-iteration-count: 1 !important; }
 }
+/* Text-only hero panel */
+.hero-aside { justify-self: end; width: 250px; }
+.focus-card { padding: 23px 22px; border: 1px solid var(--line); background: #f6f6f0; }
+.focus-card-label { margin: 0 0 7px; color: var(--accent); font-family: var(--mono); font-size: 9px; letter-spacing: .1em; text-transform: uppercase; }
+.focus-card-title { margin: 0; color: #4f554d; font-family: var(--serif); font-size: 19px; line-height: 1.35; }
+.focus-rule { height: 1px; margin: 18px 0; background: var(--line); }
+.focus-card-foot { margin: 17px 0 0; color: var(--muted); font-family: var(--mono); font-size: 9px; line-height: 1.7; }
+@media (max-width: 760px) {
+  .hero-aside { justify-self: stretch; width: 100%; }
+  .focus-card { max-width: 420px; }
+}
