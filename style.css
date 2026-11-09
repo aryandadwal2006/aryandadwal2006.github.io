@@ -44,12 +44,6 @@ button { font: inherit; }
 .hero-links { display: flex; flex-wrap: wrap; gap: 21px; margin-top: 34px; color: #777b72; font-size: 12px; }
 .hero-links a { border-bottom: 1px solid transparent; }
 .hero-links a:hover { color: var(--accent); border-color: var(--accent); }
-.hero-portrait-wrap { justify-self: end; width: 220px; }
-.portrait-frame { position: relative; width: 220px; height: 270px; overflow: hidden; border: 1px solid var(--line); background: var(--soft); }
-.hero-portrait { width: 100%; height: 100%; object-fit: cover; object-position: center; display: block; filter: saturate(.82); }
-.portrait-fallback { display: none; width: 100%; height: 100%; place-items: center; color: #859185; font-family: var(--serif); font-size: 65px; }
-.portrait-caption { margin: 12px 0 0; color: var(--muted); font-family: var(--mono); font-size: 10px; letter-spacing: .04em; text-align: right; }
-
 .intro-strip { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; padding: 22px 0; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
 .intro-strip > div { display: flex; flex-direction: column; gap: 4px; color: #686d65; font-size: 12px; }
 .strip-label, .small-label { color: var(--accent); font-family: var(--mono); font-size: 9px; letter-spacing: .12em; text-transform: uppercase; }
@@ -150,9 +144,6 @@ button { font: inherit; }
   .hero { min-height: 0; grid-template-columns: 1fr; gap: 34px; padding-top: 64px; padding-bottom: 53px; }
   .hero h1 { font-size: clamp(49px, 13vw, 68px); }
   .hero-lede { font-size: 14px; }
-  .hero-portrait-wrap { justify-self: start; width: 145px; }
-  .portrait-frame { width: 145px; height: 175px; }
-  .portrait-caption { text-align: left; }
   .intro-strip { grid-template-columns: 1fr; gap: 13px; }
   .content-section { padding-top: 75px; }
   .section-heading { display: block; margin-bottom: 27px; }
